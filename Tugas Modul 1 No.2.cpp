@@ -22,7 +22,3 @@ int main () {
     luasP = (A_alas + (1.5* a* h_segitiga));
     cout<<"Luas permukaan limas adalah = "<<luasP<<endl;
 }
-
-
- *My favorite app::C++ For iOS - Free  https://itunes.apple.com/app/id1016322367?mt=8
-Other's Tutorals:http://iii9i.com
