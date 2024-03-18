@@ -1,0 +1,69 @@
+#program pembelian tiket Bus PT.ANS Lintasan Sumatera
+Nama = ("Nama = Farhana")
+Nim =("Nim = 2310433005")
+Shift  = ("Shift = 2")
+print("Bus PT. ANS lintas Sumatera ")
+harga_tiket = {
+    "Medan": 450000,
+    "Padang": 300000,
+    "Jambi": 215000,
+    "Bengkulu": 250000,
+    "Palembang": 425000,
+    "Lampung": 625000
+}
+tujuan = input("Tujuan yang dipilih: ")
+
+harga_kelas = {
+    "Ekonomi": 10000,
+    "Bisnis": 20000,
+    "First": 30000
+}
+kelas = input("Kelas yang dipilih: ") 
+jumlahTiket = int(input("Jumlah tiket: "))
+ 
+if tujuan == "Medan": 
+    biayaTujuan = 450000
+elif tujuan == "Padang": 
+    biayaTujuan = 300000
+elif tujuan == "Jambi": 
+    biayaTujuan = 215000
+elif tujuan == "Bengkulu": 
+    biayaTujuan = 250000
+elif tujuan == "Palembang": 
+    biayaTujuan = 425000
+elif tujuan == "Lampung": 
+    biayaTujuan = 625000
+else:
+    print("Tujuan tidak valid.")
+
+print("Kelas (biaya tambahan)")
+if kelas == "Ekonomi": 
+    biayaKelas = 10000
+elif kelas == "Bisnis": 
+    biayaKelas = 20000
+elif kelas == "First": 
+    biayaKelas = 30000
+else:
+    print("Kelas tidak valid.")
+  
+totalBiaya = biayaTujuan + biayaKelas* jumlahTiket
+
+if jumlah_tiket >= 3 and jumlah_tiket <= 5:
+    diskon = total * 0.05
+elif jumlah_tiket > 5:
+    diskon = total * 0.1
+else:
+    diskon = 0
+
+total_setelah_diskon = totalBiaya - diskon
+
+if tujuan and kelas:
+    print("Tujuan: {tujuan}")
+    print("Kelas: {kelas} Class")
+    print("Jumlah tiket: {jumlah_tiket}")
+    print("Total: Rp {total}")
+    print("Diskon: Rp {diskon}")
+    print("Total setelah diskon: Rp {total_setelah_diskon}")
+else:
+    print("Input tidak valid.")
+
