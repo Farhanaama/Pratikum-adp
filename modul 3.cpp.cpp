@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+string nama, nim, shift;
+
 
 void fibonacci(int n, int fib[]) {
     fib[0] = 1;
@@ -10,6 +12,9 @@ void fibonacci(int n, int fib[]) {
 }
 
 int main (){
+    cout << "Nama = Farhana"<<endl;
+    cout << "Nim = 2310433005"<<endl;
+    cout << " Shift  = 2"<<endl;
     int n;
     int fib[100];
 
