@@ -1,0 +1,35 @@
+nilai_ujian = [[84, 75, 90, 85],
+               [98, 65, 88, 80],
+               [90, 78, 95, 85]]
+
+print("Data Nilai Ujian:")
+for i in range(3):
+    for j in range(4):
+        print(nilai_ujian[i][j], end=" ")
+    print()
+
+print("\nRata-rata nilai ujian setiap mahasiswa:")
+for i in range(3):
+    total = 0
+    for nilai in nilai_ujian[i]:
+        total += nilai
+    rata = total / 4
+    print("Mahasiswa {0} {1:4}".format(i+1, rata))
+
+mata_kuliah = ["Matematika", "Fisika", "Kimia", "Biologi"]
+for i in range(4):
+    max_nilai = nilai_ujian[0][i]
+    min_nilai = nilai_ujian[0][i]
+    max_mahasiswa = 1
+    min_mahasiswa = 1
+    for j in range(1, 3):
+        nilai = nilai_ujian[j][i]
+        if nilai > max_nilai:
+            max_nilai = nilai
+            max_mahasiswa = j + 1
+        if nilai < min_nilai:
+            min_nilai = nilai
+            min_mahasiswa = j + 1
+    print("\nMata Kuliah {0}:".format(mata_kuliah[i]))
+    print("  Nilai Tertinggi: {0}, Mahasiswa: {1}".format(max_nilai, max_mahasiswa))
+    print("  Nilai Terendah: {0}, Mahasiswa: {1}".format(min_nilai, min_mahasiswa))
