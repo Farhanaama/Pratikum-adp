@@ -1,0 +1,41 @@
+def konversi_suhu(suhu, satuan):
+    if satuan == 'C':
+        reamur = 0.8 * suhu
+        fahrenheit = (9/5 * suhu) + 32
+        kelvin = suhu + 273.15
+        return [["Reamur", reamur], ["Fahrenheit", fahrenheit], ["Kelvin", kelvin]]
+    elif satuan == 'R':
+        celsius = 1.25 * suhu
+        fahrenheit = (2.25 * suhu) + 32
+        kelvin = (5/4 * suhu) + 273.15
+        return [["Celsius", celsius], ["Fahrenheit", fahrenheit], ["Kelvin", kelvin]]
+    elif satuan == 'F':
+        celsius = (suhu - 32) * 5/9
+        reamur = (suhu - 32) * 5/9 * (4/5)
+        kelvin = (suhu - 32) * 5/9 + 273.15
+        return [["Celsius", celsius], ["Reamur", reamur], ["Kelvin", kelvin]]
+    elif satuan == 'K':
+        celsius = suhu - 273.15
+        reamur = 0.8 * (suhu - 273.15)
+        fahrenheit = (9/5 * (suhu - 273.15)) + 32
+        return [["Celsius", celsius], ["Reamur", reamur], ["Fahrenheit", fahrenheit]]
+    else:
+        return "Satuan suhu tidak valid"
+
+def tampilkan_hasil_konversi(suhu, satuan):
+    hasil = konversi_suhu(suhu, satuan)
+    if type(hasil) == list:
+        print(f"Suhu {suhu} derajat {satuan} dapat dikonversi menjadi:")
+        print("-"*52)
+        print("|| {:10} || {:30} ||".format ("Satuan suhu "," Derajat suhu "))
+        print("-"*52)
+        for item in hasil:
+            print("|| {:12} || {:30} ||".format(item[0], item[1]))
+            
+        print("-"*52)
+    else:
+        print(hasil)
+
+suhu = float(input("Masukkan suhu: "))
+satuan = input("Masukkan satuan suhu (C/F/R/K): ")
+tampilkan_hasil_konversi(suhu, satuan)
